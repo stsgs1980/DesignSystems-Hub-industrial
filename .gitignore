@@ -1,0 +1,10 @@
+node_modules/
+.next/
+.env
+bun.lock
+db/
+download/
+upload/
+mini-services/
+.zscripts/
+examples/

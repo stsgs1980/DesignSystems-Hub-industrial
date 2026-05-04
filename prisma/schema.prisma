@@ -1,0 +1,111 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Main entity for design systems, libraries, technologies, etc.
+model DesignEntity {
+  id          String   @id
+  type        String   // system, library, principle, pattern, technology, component
+  name        String
+  description String
+  
+  // JSON fields for flexible attributes
+  attributes  String   // JSON string of attributes object
+  tags        String   // JSON string of tags array
+  source      String?  // Source reference
+  
+  // Display & ranking
+  popularity  Int      @default(0)
+  gradient    String?  @default("from-slate-500 to-slate-600")
+  
+  // Tech Radar classification
+  techRadarRing     String?  // adopt, trial, assess, hold
+  techRadarReason   String?
+  techRadarCategory String?
+  
+  // Ratings (0-10 scale)
+  designRating       Int @default(0)
+  integrationRating  Int @default(0)
+  learningRating     Int @default(0)
+  documentationRating Int @default(0)
+  communityRating    Int @default(0)
+  performanceRating  Int @default(0)
+  
+  // Stats
+  githubStars    String?
+  npmDownloads   String?
+  bundleSize     String?
+  bundleSizeBytes Int?
+  lastUpdate     String?
+  contributors   Int?
+  releases       String?
+  securityScore  Int?
+  dependencies   Int?
+  difficulty     Int?
+  trend          String?  // up, stable, down
+  
+  // Metadata
+  recommended      Boolean @default(false)
+  beginnerFriendly Boolean @default(false)
+  maintained       Boolean @default(true)
+  openSource       Boolean @default(true)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@index([type])
+  @@index([techRadarRing])
+  @@index([popularity])
+}
+
+// Learning paths
+model LearningStep {
+  id          String @id
+  step        Int
+  name        String
+  description String
+  time        String
+  difficulty  Int
+  order       Int
+  options     String? // JSON array of options
+  recommended String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Tech stack recommendations
+model TechStack {
+  id          String @id
+  name        String
+  description String
+  difficulty  String
+  stack       String  // JSON array of tool IDs
+  useCase     String
+  pros        String  // JSON array
+  timeToLearn String
+  why         String  // JSON object
+  toolsExplanation String // JSON object
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Courses for Academy
+model Course {
+  id          String @id
+  name        String
+  description String
+  icon        String
+  lessons     Int
+  category    String
+  order       Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
