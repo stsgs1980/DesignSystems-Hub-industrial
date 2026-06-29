@@ -2,7 +2,39 @@
 
 > Единый центр дизайн-систем. Исследуйте, сравнивайте и выбирайте идеальные дизайн-системы для ваших проектов.
 
-## 🏭 Дизайн-система: Industrial Minimalism
+
+[![Next.js](https://img.shields.io/badge/Next.js-black?style=flat-square)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-61DAFB?style=flat-square)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square)](https://www.typescriptlang.org)
+[![Tailwind_CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square)](https://tailwindcss.com)
+[![Vue](https://img.shields.io/badge/Vue-4FC08D?style=flat-square)](https://vuejs.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+
+
+## Table of Contents
+
+- [Дизайн-система: Industrial Minimalism](#дизайн-система:-industrial-minimalism)
+- [Структура проекта](#структура-проекта)
+- [Технологический стек](#технологический-стек)
+- [Запуск проекта](#запуск-проекта)
+- [Установка зависимостей](#установка-зависимостей)
+- [Инициализация базы данных](#инициализация-базы-данных)
+- [Запуск в development режиме](#запуск-в-development-режиме)
+- [Проверка линтером](#проверка-линтером)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [API Endpoints](#api-endpoints)
+- [Академия](#академия)
+- [Tech Radar](#tech-radar)
+- [База данных](#база-данных)
+- [UI Компоненты](#ui-компоненты)
+- [Правила разработки](#правила-разработки)
+- [Ссылки](#ссылки)
+- [Автор](#автор)
+- [Features](#features)
+- [License](#license)
+
+## Дизайн-система: Industrial Minimalism
 
 ### Концепция
 Индустриальный минимализм — эстетика, вдохновлённая промышленной архитектурой:
@@ -12,7 +44,7 @@
 - **Функциональность**: контент важнее декора
 
 ### Цветовая палитра
-```
+```bash
 Основные цвета:
 - zinc-900   → Основной текст / Активные элементы
 - zinc-500   → Вторичный текст
@@ -26,17 +58,16 @@
 ```
 
 ### Типографика
-```
+```bash
 Заголовки: Bold, UPPERCASE, tracking-wider
 Основной текст: Normal, leading-relaxed
 Мелкий текст: text-xs, text-muted-foreground
 ```
 
----
 
-## 📁 Структура проекта
+## Структура проекта
 
-```
+```bash
 /home/z/my-project/
 ├── src/
 │   ├── app/
@@ -68,9 +99,8 @@
 └── README.md                 # Этот файл
 ```
 
----
 
-## 🛠 Технологический стек
+## Технологический стек
 
 | Категория | Технология | Версия |
 |-----------|------------|--------|
@@ -84,21 +114,20 @@
 | Icons | Lucide React | - |
 | Package Manager | Bun | - |
 
----
 
-## 🚀 Запуск проекта
+## Запуск проекта
 
 ```bash
-# Установка зависимостей
+## Установка зависимостей
 bun install
 
-# Инициализация базы данных
+## Инициализация базы данных
 bun run db:push
 
-# Запуск в development режиме
+## Запуск в development режиме
 bun run dev
 
-# Проверка линтером
+## Проверка линтером
 bun run lint
 ```
 
@@ -107,9 +136,36 @@ bun run lint
 DATABASE_URL="file:../db/custom.db"
 ```
 
----
+## Tech Stack
 
-## 📡 API Endpoints
+- **Framework** - Next.js
+- **Language** - TypeScript
+- **Styling** - Tailwind CSS, CSS
+- **Database** - Prisma, SQLite
+- **Libraries** - shadcn/ui, Framer Motion
+- **Tools** - React, Bun, Vue
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 20+ or Bun
+
+### Installation
+
+```bash
+git clone https://github.com/stsgs1980/DesignSystems-Hub-industrial.git
+cd DesignSystems-Hub-industrial
+bun install
+```
+
+### Run
+
+```bash
+bun run dev
+```
+
+## API Endpoints
 
 ### GET /api/systems
 Возвращает дизайн-системы и библиотеки (type: system, library)
@@ -159,13 +215,12 @@ DATABASE_URL="file:../db/custom.db"
 ### POST /api/seed
 Инициализирует базу данных начальными данными
 
----
 
-## 📚 Академия
+## Академия
 
 ### Иерархия обучения
 
-```
+```bash
 Уровень 1: НАЧИНАЮЩИЙ
 ├── Курс: Основы дизайн-систем
 │   ├── Модуль: Что такое дизайн-система?
@@ -199,9 +254,8 @@ DATABASE_URL="file:../db/custom.db"
 - **3 уровня**
 - **~24 часа контента**
 
----
 
-## 🎯 Tech Radar
+## Tech Radar
 
 ### Кольца радара
 
@@ -230,9 +284,8 @@ DATABASE_URL="file:../db/custom.db"
 **HOLD (2):**
 - Ant Design, Angular
 
----
 
-## 🗄 База данных
+## База данных
 
 ### Schema (Prisma)
 
@@ -277,9 +330,8 @@ model TechStack {
 }
 ```
 
----
 
-## 🎨 UI Компоненты
+## UI Компоненты
 
 ### Используемые в проекте
 
@@ -294,9 +346,8 @@ model TechStack {
 ### Все доступные компоненты (shadcn/ui)
 `accordion`, `alert`, `alert-dialog`, `aspect-ratio`, `avatar`, `badge`, `breadcrumb`, `button`, `calendar`, `card`, `carousel`, `chart`, `checkbox`, `collapsible`, `command`, `context-menu`, `dialog`, `drawer`, `dropdown-menu`, `form`, `hover-card`, `input`, `input-otp`, `label`, `menubar`, `navigation-menu`, `pagination`, `popover`, `progress`, `radio-group`, `resizable`, `scroll-area`, `select`, `separator`, `sheet`, `sidebar`, `skeleton`, `slider`, `sonner`, `switch`, `table`, `tabs`, `textarea`, `toast`, `toggle`, `tooltip`
 
----
 
-## 📝 Правила разработки
+## Правила разработки
 
 ### Обязательные действия
 1. **Бэкап** — сохранять важные файлы перед изменениями
@@ -316,9 +367,8 @@ model TechStack {
 - Touch-friendly (минимум 44px touch targets)
 - Accessibility (ARIA, alt text, keyboard nav)
 
----
 
-## 📖 Ссылки
+## Ссылки
 
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Tailwind CSS](https://tailwindcss.com/docs)
@@ -327,9 +377,20 @@ model TechStack {
 - [Framer Motion](https://www.framer.com/motion)
 - [Lucide Icons](https://lucide.dev)
 
----
 
-## 👤 Автор
+## Автор
 
 DesignSystems Hub — 2025
 
+
+## Features
+
+- Feature 1 - description
+- Feature 2 - description
+
+## License
+
+[MIT](LICENSE)
+
+---
+Built with: Next.js + Vue + React + TypeScript
